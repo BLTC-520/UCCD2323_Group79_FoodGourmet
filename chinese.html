@@ -17,7 +17,7 @@
         --malaysia-white: #ffffff;
       }
       body {
-        font-family: Arial, sans-serif;
+        font-family: "Inter", sans-serif;
         line-height: 1.6;
         color: rgba(red, green, blue, alpha);
       }
@@ -459,84 +459,82 @@
     </footer>
     <script>
       document.addEventListener("DOMContentLoaded", () => {
-        // Constants
-        const WELCOME_MESSAGES = [
-          "欢迎 (Huānyíng)", // Mandarin
-          "歡迎 (Foon Ying)", // Cantonese
-          "歡迎 (Huan-gêng)", // Hokkien
-        ];
-        const MESSAGE_CHANGE_INTERVAL = 3000;
+    
+    const WELCOME_MESSAGES = [
+        "欢迎 (Huānyíng)", // Mandarin
+        "歡迎 (Foon Ying)", // Cantonese
+        "歡迎 (Huan-gêng)", // Hokkien
+    ];
+    const MESSAGE_CHANGE_INTERVAL = 3000;
 
-        // DOM Elements
-        const welcomeElement = document.getElementById("welcome-message");
-        const historyTexts = document.querySelectorAll(".history-text");
-        const tabs = document.querySelectorAll(".food-tab");
-        const descriptions = document.querySelectorAll(".food-description");
+    // DOM Elements
+    const welcomeElement = document.getElementById("welcome-message");
+    const historyTexts = document.querySelectorAll(".history-text");
+    const tabs = document.querySelectorAll(".food-tab");
+    const descriptions = document.querySelectorAll(".food-description");
 
-        // Welcome Message Animation
-        let currentMessageIndex = 0;
+    // Welcome Message Animation
+    let currentMessageIndex = 0;
 
-        const animateWelcomeMessage = () => {
-          welcomeElement.style.opacity = "0";
-          welcomeElement.style.transform = "translateY(20px)";
+    const animateWelcomeMessage = () => {
+        welcomeElement.style.opacity = "0";
+        welcomeElement.style.transform = "translateY(20px)";
 
-          setTimeout(() => {
+        setTimeout(() => {
             welcomeElement.textContent = WELCOME_MESSAGES[currentMessageIndex];
             welcomeElement.style.opacity = "1";
             welcomeElement.style.transform = "translateY(0)";
-            currentMessageIndex =
-              (currentMessageIndex + 1) % WELCOME_MESSAGES.length;
-          }, 500);
-        };
+            currentMessageIndex = (currentMessageIndex + 1) % WELCOME_MESSAGES.length;
+        }, 500);
+    };
 
-        const startWelcomeAnimation = () => {
-          animateWelcomeMessage(); // Show first message immediately
-          setInterval(animateWelcomeMessage, MESSAGE_CHANGE_INTERVAL);
-        };
+    const startWelcomeAnimation = () => {
+        animateWelcomeMessage(); // Show first message immediately
+        setInterval(animateWelcomeMessage, MESSAGE_CHANGE_INTERVAL);
+    };
 
-        // History Text Animation
-        const observeHistoryTexts = () => {
-          const observer = new IntersectionObserver(
+    // History Text Animation
+    const observeHistoryTexts = () => {
+        const observer = new IntersectionObserver(
             (entries) => {
-              entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                  entry.target.classList.add("visible");
-                }
-              });
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("visible");
+                    }
+                });
             },
             { threshold: 0.5 }
-          );
+        );
 
-          historyTexts.forEach((text) => observer.observe(text));
-        };
+        historyTexts.forEach((text) => observer.observe(text));
+    };
 
-        // Tab Functionality
-        const initializeTabs = () => {
-          tabs.forEach((tab) => {
+    // Tab Functionality
+    const initializeTabs = () => {
+        tabs.forEach((tab) => {
             tab.addEventListener("click", () => {
-              const targetId = tab.getAttribute("data-target");
-              const target = document.querySelector(targetId);
+                const targetId = tab.getAttribute("data-target");
+                const target = document.querySelector(targetId);
 
-              tabs.forEach((t) => t.classList.remove("active"));
-              descriptions.forEach((d) => d.classList.remove("active"));
+                tabs.forEach((t) => t.classList.remove("active"));
+                descriptions.forEach((d) => d.classList.remove("active"));
 
-              tab.classList.add("active");
-              target.classList.add("active");
+                tab.classList.add("active");
+                target.classList.add("active");
             });
-          });
-        };
+        });
+    };
 
-        // Initialize all functionalities
-        const initialize = () => {
-          startWelcomeAnimation();
-          observeHistoryTexts();
-          initializeTabs();
-        };
+    // Initialize all functionalities
+    const initialize = () => {
+        startWelcomeAnimation();
+        observeHistoryTexts();
+        initializeTabs();
+    };
 
-        // Run initialization
-        initialize();
-      });
+    // Run initialization
+    initialize();
+});
     </script>
-    <script src="scripts.js"></script>
   </body>
 </html>

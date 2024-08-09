@@ -17,9 +17,9 @@
         --malaysia-white: #ffffff;
       }
       body {
-        font-family: Arial, sans-serif;
+        font-family: "Inter", sans-serif;
         line-height: 1.6;
-        color: var(--malaysia-red);
+        color: rgba(red, green, blue, alpha);
       }
       .hero {
         position: relative;
@@ -51,8 +51,8 @@
 
       .welcome-message {
         font-size: 4rem;
-        margin-bottom: 1rem;
         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        transition: opacity 0.5s ease, transform 0.5s ease;
         background: none;
       }
 
@@ -206,7 +206,7 @@
 
     <section
       class="hero"
-      style="background-image: url(assets/images/local/malay/malaybg.jpg)"
+      style="background-image: url(assets/images/local/malay/malayfood.png)"
     >
       <div class="hero-overlay"></div>
       <div class="hero-content">
@@ -256,7 +256,7 @@
             Nasi Lemak
           </div>
           <div class="food-tab" data-target="#rendang">
-            <img src="assets/images/local/malay/rendang.jpg" alt="Rendang" />
+            <img src="assets/images/local/malay/rendang.jpeg" alt="Rendang" />
             Rendang
           </div>
           <div class="food-tab" data-target="#satay">
@@ -264,7 +264,10 @@
             Satay
           </div>
           <div class="food-tab" data-target="#roti-jala">
-            <img src="assets/images/local/malay/rotijala.jpg" alt="Roti Jala" />
+            <img
+              src="assets/images/local/malay/rotijala.jpeg"
+              alt="Roti Jala"
+            />
             Roti Jala
           </div>
         </div>
@@ -429,20 +432,20 @@
     </footer>
 
     <script>
-      const messages = ["Selamat Datang", "Welcome", "欢迎", "வாங்க"];
-
-      let messageIndex = 0;
-
-      function updateMessage() {
-        const welcomeMessage = document.getElementById("welcome-message");
-        welcomeMessage.textContent = messages[messageIndex];
-        messageIndex = (messageIndex + 1) % messages.length;
-      }
-
-      setInterval(updateMessage, 2000);
-
+      const welcomeElement = document.getElementById("welcome-message");
+      const welcomeMessage = "Selamat Datang!";
       const historyTexts = document.querySelectorAll(".history-text");
 
+      const animateWelcomeMessage = () => {
+        welcomeElement.style.opacity = "0";
+        welcomeElement.style.transform = "translateY(20px)";
+
+        welcomeElement.textContent = welcomeMessage;
+        welcomeElement.style.opacity = "1";
+        welcomeElement.style.transform = "translateY(0)";
+      };
+
+      animateWelcomeMessage();
       window.addEventListener("scroll", () => {
         const scrollPosition = window.scrollY + window.innerHeight;
 

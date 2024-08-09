@@ -113,14 +113,8 @@ nav .container {
   color: var(--primary-color);
 }
 
-section {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.5s ease, transform 0.5s ease;
-}
-section.animate {
-  opacity: 1;
-  transform: translateY(0);
+.section {
+  padding: 4rem 0;
 }
 #background-video {
   position: absolute;
@@ -315,8 +309,6 @@ section.animate {
 
 .about-text .animate-text.active {
   animation: fadeInUp 0.7s ease forwards;
-  opacity: 1;
-  transform: translateY(0);
 }
 
 .about-text h2.animate-text.active {

@@ -17,9 +17,9 @@
         --malaysia-white: #ffffff;
       }
       body {
-        font-family: Arial, sans-serif;
+        font-family: "Inter", sans-serif;
         line-height: 1.6;
-        color: var(--malaysia-red);
+        color: rgba(red, green, blue, alpha);
       }
       .hero {
         position: relative;
@@ -51,8 +51,8 @@
 
       .welcome-message {
         font-size: 4rem;
-        margin-bottom: 1rem;
         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        transition: opacity 0.5s ease, transform 0.5s ease;
         background: none;
       }
 
@@ -207,7 +207,10 @@
     </header>
 
     <main>
-      <section class="hero">
+      <section
+        class="hero"
+        style="background-image: url(assets/images/local/indian/indian.jpg)"
+      >
         <div class="hero-overlay"></div>
         <div class="hero-content">
           <h1 class="welcome-message">Indian Cuisine in Malaysia</h1>
@@ -258,7 +261,7 @@
             </div>
             <div class="food-tab" data-target="#tandoori-chicken">
               <img
-                src="assets/images/local/indian/tandoori.jpg"
+                src="assets/images/local/indian/tandoorichick.jpeg"
                 alt="Tandoori Chicken"
               />
               Tandoori Chicken
@@ -432,12 +435,20 @@
     </footer>
 
     <script>
-      const message = "வாங்க";
+      const welcomeElement = document.getElementById("welcome-message");
+      const welcomeMessage = "வரவேற்கிறேன்";
 
-      function updateMessage() {
-        const welcomeMessage = document.getElementById("welcome-message");
-        welcomeMessage.textContent = message;
-      }
+      const animateWelcomeMessage = () => {
+        welcomeElement.style.opacity = "0";
+        welcomeElement.style.transform = "translateY(20px)";
+
+        welcomeElement.textContent = welcomeMessage;
+        welcomeElement.style.opacity = "1";
+        welcomeElement.style.transform = "translateY(0)";
+      };
+
+      animateWelcomeMessage();
+
       const historyTexts = document.querySelectorAll(".history-text");
 
       window.addEventListener("scroll", () => {
