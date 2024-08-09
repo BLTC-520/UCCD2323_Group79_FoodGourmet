@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chinese Cuisine in Malaysia</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="subpage.css" />
+    <style>
+      body {
+        cursor: url("assets/noodlecursor.png"), auto;
+      }
+      :root {
+        --malaysia-blue: #000080;
+        --malaysia-red: #cc0001;
+        --malaysia-yellow: #fcd116;
+        --malaysia-white: #ffffff;
+      }
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        color: rgba(red, green, blue, alpha);
+      }
+      .hero {
+        position: relative;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-size: cover;
+        background-position: center;
+        color: white;
+        text-align: center;
+      }
+
+      .hero-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.3);
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 1;
+        max-width: 800px;
+        padding: 0 20px;
+      }
+
+      .welcome-message {
+        font-size: 4rem;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        background: none;
+      }
+
+      .hero-subtitle {
+        font-size: 1rem;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+      }
+
+      .history {
+        background-color: #f8f8f8;
+        padding: 60px 0;
+      }
+
+      .section-title {
+        text-align: center;
+        margin-bottom: 40px;
+        color: #333;
+      }
+
+      .history-content {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .history-text {
+        font-family: "Inter";
+        font-size: 15px;
+        opacity: 0;
+        transform: translateX(-50px);
+        transition: opacity 0.5s, transform 0.5s;
+        margin-bottom: 20px;
+      }
+
+      .history-text.right {
+        transform: translateX(50px);
+      }
+
+      .history-text.visible {
+        opacity: 1;
+        transform: translateX(0);
+      }
+      .history,
+      .food-tabs-container {
+        padding: 50px 0;
+      }
+
+      .food-tabs {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        margin-bottom: 40px;
+      }
+
+      .food-tab {
+        cursor: pointer;
+        text-align: center;
+        transition: all 0.3s ease;
+      }
+
+      .food-tab img {
+        width: 80px;
+        height: 80px;
+        object-fit: cover;
+        border-radius: 50%;
+        margin-bottom: 10px;
+      }
+
+      .food-tab span {
+        display: block;
+      }
+
+      .food-tab.active {
+        transform: scale(1.1);
+      }
+
+      .history-content,
+      .food-content {
+        background-color: rgba(255, 255, 255, 0.8);
+        padding: 20px;
+        border-radius: 10px;
+      }
+
+      .food-description {
+        display: none;
+      }
+
+      .food-description.active {
+        display: block;
+      }
+
+      .food-gallery img {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+      }
+
+      .food-info {
+        padding: 30px;
+      }
+
+      .food-info h3 {
+        color: #cc0001;
+        margin-bottom: 20px;
+      }
+
+      .food-info ul {
+        columns: 2;
+        margin-bottom: 20px;
+      }
+
+      .flag-background {
+        position: relative;
+        background-image: url(assets/images/local/malaysiaflag.jpg);
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+      }
+      .flag-background::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(255, 255, 255, 0.7);
+        z-index: 1;
+      }
+      .flag-background > * {
+        position: relative;
+        z-index: 2;
+      }
+    </style>
+  </head>
+  <body>
+    <nav id="main-nav" style="font-family: Inter">
+      <div class="container">
+        <a href="index.html" class="logo">Food Gourmet</a>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="chinese.html">Chinese Cuisine</a></li>
+          <li><a href="malay.html">Malay Cuisine</a></li>
+          <li><a href="indian.html">Indian Cuisine</a></li>
+        </ul>
+        <div class="burger">
+          <div class="line1"></div>
+          <div class="line2"></div>
+          <div class="line3"></div>
+        </div>
+      </div>
+    </nav>
+
+    <section
+      class="hero"
+      style="background-image: url(assets/images/local/chinese/chinesebg.jpg)"
+    >
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <h1 id="welcome-message" class="welcome-message"></h1>
+        <p class="hero-subtitle">
+          Explore the rich flavors and traditional dishes of Chinese cuisine in
+          Malaysia
+        </p>
+      </div>
+    </section>
+    <div class="flag-background">
+    <section class="history">
+      <div class="container">
+        <h2 class="section-title">History of Chinese Cuisine in Malaysia</h2>
+        <div class="history-content">
+          <p class="history-text left">
+            Chinese cuisine in Malaysia has a rich history dating back to the
+            15th century when Chinese traders and immigrants began settling in
+            the Malay Peninsula.
+          </p>
+          <p class="history-text right">
+            Over the centuries, these culinary traditions have evolved, blending
+            with local ingredients and tastes to create a unique Malaysian
+            Chinese cuisine that reflects the cultural diversity of the country.
+          </p>
+          <p class="history-text left">
+            The influx of Chinese immigrants during different periods, including
+            the British colonial era, brought various regional cuisines from
+            China, each contributing to the rich tapestry of flavors we see
+            today.
+          </p>
+          <p class="history-text right">
+            From the spicy and sour flavors of Sichuan to the delicate tastes of
+            Cantonese cuisine, Malaysian Chinese food is a testament to the
+            adaptability and creativity of immigrant communities.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="food-tabs-container container">
+      <div class="food-tabs">
+        <div class="food-tab active" data-target="#char-kuey-teow">
+          <img
+            src="assets/images/local/chinese/charkueyteow2.jpg"
+            alt="Char Kuey Teow"
+          />
+          Char Kuey Teow
+        </div>
+        <div class="food-tab" data-target="#laksa">
+          <img src="assets/images/local/chinese/laksa.jpg" alt="Laksa" />
+          Laksa
+        </div>
+        <div class="food-tab" data-target="#bak-kut-teh">
+          <img
+            src="assets/images/local/chinese/bakuteh.jpg"
+            alt="Bak Kut Teh"
+          />
+          Bak Kut Teh
+        </div>
+        <div class="food-tab" data-target="#hainanese-chicken-rice">
+          <img
+            src="assets/images/local/chinese/hchicken.png"
+            alt="Hainanese Chicken Rice"
+          />
+          Hainanese Chicken Rice
+        </div>
+      </div>
+
+      <div class="food-content">
+        <div id="char-kuey-teow" class="food-description active">
+          <div class="food-gallery"></div>
+          <div class="food-info">
+            <h3>Char Kuey Teow 炒粿条</h3>
+            <p>
+              A popular stir-fried noodle dish with shrimp, bean sprouts, and
+              chives, cooked in a savory soy sauce. The wok hei (breath of the
+              wok) imparts a smoky flavor that makes this dish unforgettable.
+            </p>
+            <h4>Key Ingredients:</h4>
+            <ul>
+              <li>Flat rice noodles</li>
+              <li>Shrimp</li>
+              <li>Chinese sausage</li>
+              <li>Bean sprouts</li>
+              <li>Chives</li>
+              <li>Soy sauce</li>
+              <li>Chili paste</li>
+            </ul>
+            <p><strong>Origin:</strong> Penang, Malaysia</p>
+            <p>
+              <strong>Best paired with:</strong> A cold refreshing drink like
+              sugar cane juice
+            </p>
+          </div>
+        </div>
+        <div id="laksa" class="food-description">
+          <div class="food-gallery"></div>
+          <div class="food-info">
+            <h3>Laksa 叻沙</h3>
+            <p>
+              A spicy noodle soup with a rich and creamy coconut broth,
+              typically garnished with shrimp, chicken, or tofu. Laksa is a
+              perfect blend of Chinese and Malay culinary traditions, resulting
+              in a dish that's both comforting and exciting to the palate.
+            </p>
+            <h4>Key Ingredients:</h4>
+            <ul>
+              <li>Rice noodles or vermicelli</li>
+              <li>Coconut milk</li>
+              <li>Shrimp or chicken</li>
+              <li>Bean sprouts</li>
+              <li>Tofu puffs</li>
+              <li>
+                Laksa paste (blend of chili, shrimp paste, lemongrass, and
+                spices)
+              </li>
+              <li>Fish cake slices</li>
+              <li>Fresh herbs (mint, Vietnamese coriander)</li>
+            </ul>
+            <p>
+              <strong>Origin:</strong> Peranakan culture, popular in Penang and
+              Singapore
+            </p>
+            <p>
+              <strong>Best paired with:</strong> A cold glass of calamansi juice
+              or iced tea
+            </p>
+          </div>
+        </div>
+
+        <div id="bak-kut-teh" class="food-description">
+          <div class="food-gallery"></div>
+          <div class="food-info">
+            <h3>Bak Kut Teh 肉骨茶</h3>
+            <p>
+              A hearty pork rib soup infused with a complex blend of herbs and
+              spices, often served with rice or youtiao (Chinese crullers). The
+              name literally translates to "meat bone tea," although there's no
+              tea in the dish itself.
+            </p>
+            <h4>Key Ingredients:</h4>
+            <ul>
+              <li>Pork ribs</li>
+              <li>Garlic</li>
+              <li>Star anise</li>
+              <li>Cinnamon</li>
+              <li>Cloves</li>
+              <li>Dong quai (Chinese angelica root)</li>
+              <li>Shiitake mushrooms</li>
+              <li>Fried tofu puffs</li>
+            </ul>
+            <p><strong>Origin:</strong> Klang, Selangor, Malaysia</p>
+            <p>
+              <strong>Best paired with:</strong> Chinese tea (oolong or pu-erh)
+              to help digest the rich, hearty soup
+            </p>
+          </div>
+        </div>
+
+        <div id="hainanese-chicken-rice" class="food-description">
+          <div class="food-gallery"></div>
+          <div class="food-info">
+            <h3>Hainanese Chicken Rice 海南鸡饭</h3>
+            <p>
+              A classic dish featuring tender poached chicken served with
+              fragrant rice cooked in chicken broth and accompanied by a trio of
+              sauces. This seemingly simple dish is elevated by the attention to
+              detail in its preparation and the harmony of its flavors.
+            </p>
+            <h4>Key Ingredients:</h4>
+            <ul>
+              <li>Whole chicken</li>
+              <li>Jasmine rice</li>
+              <li>Ginger</li>
+              <li>Garlic</li>
+              <li>Pandan leaves</li>
+              <li>Chicken stock</li>
+              <li>Cucumber slices for garnish</li>
+              <li>
+                Accompanying sauces: chili sauce, ginger sauce, dark soy sauce
+              </li>
+            </ul>
+            <p>
+              <strong>Origin:</strong> Adapted from Hainanese immigrants in
+              Malaysia and Singapore
+            </p>
+            <p>
+              <strong>Best paired with:</strong> A bowl of clear chicken soup
+              and stir-fried vegetables
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h3>Recipes</h3>
+            <ul>
+              <li><a href="#">How-Tos</a></li>
+              <li><a href="#">World Cuisines</a></li>
+              <li><a href="#">Ingredients</a></li>
+              <li><a href="#">Equipment</a></li>
+              <li><a href="#">Features</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h3>About Us</h3>
+            <ul>
+              <li><a href="#">Terms of Service</a></li>
+              <li><a href="#">Editorial Guidelines</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h3>Advertise</h3>
+            <ul>
+              <li><a href="#">Careers</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="social-icons">
+          <a href="https://www.instagram.com/" class="social-icon"
+            ><img src="assets/images/logo/instagram.png" alt="Instagram"
+          /></a>
+          <a href="https://www.pinterest.com/" class="social-icon"
+            ><img src="assets/images/logo/pinterest.png" alt="Pinterest"
+          /></a>
+          <a href="https://www.facebook.com/" class="social-icon"
+            ><img src="assets/images/logo/meta.png" alt="Facebook"
+          /></a>
+          <a href="https://twitter.com/" class="social-icon"
+            ><img src="assets/images/logo/x.png" alt="Twitter"
+          /></a>
+          <a href="https://www.youtube.com/" class="social-icon"
+            ><img src="assets/images/logo/youtube1.png" alt="YouTube"
+          /></a>
+        </div>
+        <div class="footer-bottom">
+          <p>
+            © 2024 Food Gourmet. All rights reserved. | Designed with ❤️ for
+            food lovers
+          </p>
+        </div>
+      </div>
+    </footer>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        // Constants
+        const WELCOME_MESSAGES = [
+          "欢迎 (Huānyíng)", // Mandarin
+          "歡迎 (Foon Ying)", // Cantonese
+          "歡迎 (Huan-gêng)", // Hokkien
+        ];
+        const MESSAGE_CHANGE_INTERVAL = 3000;
+
+        // DOM Elements
+        const welcomeElement = document.getElementById("welcome-message");
+        const historyTexts = document.querySelectorAll(".history-text");
+        const tabs = document.querySelectorAll(".food-tab");
+        const descriptions = document.querySelectorAll(".food-description");
+
+        // Welcome Message Animation
+        let currentMessageIndex = 0;
+
+        const animateWelcomeMessage = () => {
+          welcomeElement.style.opacity = "0";
+          welcomeElement.style.transform = "translateY(20px)";
+
+          setTimeout(() => {
+            welcomeElement.textContent = WELCOME_MESSAGES[currentMessageIndex];
+            welcomeElement.style.opacity = "1";
+            welcomeElement.style.transform = "translateY(0)";
+            currentMessageIndex =
+              (currentMessageIndex + 1) % WELCOME_MESSAGES.length;
+          }, 500);
+        };
+
+        const startWelcomeAnimation = () => {
+          animateWelcomeMessage(); // Show first message immediately
+          setInterval(animateWelcomeMessage, MESSAGE_CHANGE_INTERVAL);
+        };
+
+        // History Text Animation
+        const observeHistoryTexts = () => {
+          const observer = new IntersectionObserver(
+            (entries) => {
+              entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                  entry.target.classList.add("visible");
+                }
+              });
+            },
+            { threshold: 0.5 }
+          );
+
+          historyTexts.forEach((text) => observer.observe(text));
+        };
+
+        // Tab Functionality
+        const initializeTabs = () => {
+          tabs.forEach((tab) => {
+            tab.addEventListener("click", () => {
+              const targetId = tab.getAttribute("data-target");
+              const target = document.querySelector(targetId);
+
+              tabs.forEach((t) => t.classList.remove("active"));
+              descriptions.forEach((d) => d.classList.remove("active"));
+
+              tab.classList.add("active");
+              target.classList.add("active");
+            });
+          });
+        };
+
+        // Initialize all functionalities
+        const initialize = () => {
+          startWelcomeAnimation();
+          observeHistoryTexts();
+          initializeTabs();
+        };
+
+        // Run initialization
+        initialize();
+      });
+    </script>
+    <script src="scripts.js"></script>
+  </body>
+</html>

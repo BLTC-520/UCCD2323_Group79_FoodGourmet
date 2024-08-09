@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Food Gourmet</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="fb-root"></div>
+    <script
+      async
+      defer
+      crossorigin="anonymous"
+      src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v10.0"
+      nonce="YOUR_NONCE"
+    ></script>
+    <script
+      async
+      src="https://platform.twitter.com/widgets.js"
+      charset="utf-8"
+    ></script>
+    <div id="welcome-message"></div>
+    <nav id="main-nav">
+      <div class="container">
+        <a href="#" class="logo">Food Gourmet</a>
+        <ul class="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#global-cuisines">Global Cuisines</a></li>
+          <li><a href="#local-cuisines">Local Cuisines</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#blog">Blog</a></li>
+        </ul>
+        <div class="burger">
+          <div class="line1"></div>
+          <div class="line2"></div>
+          <div class="line3"></div>
+        </div>
+      </div>
+    </nav>
+
+    <main role="main">
+      <section id="home" class="section hero">
+        <video autoplay muted loop id="background-video">
+          <source src="assets/food.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        <div class="hero-content">
+          <h1>Discover the World Through Flavor</h1>
+          <p>Embark on a culinary journey across global and local cuisines</p>
+          <a href="#global-cuisines" class="btn btn-primary">Start Exploring</a>
+        </div>
+      </section>
+
+      <section id="global-cuisines" class="section featured-cuisines">
+        <div class="container">
+          <h2 class="section-title">Featured Global Cuisines</h2>
+          <div class="cuisine-grid">
+            <div class="cuisine-card">
+              <img
+                src="assets/images/vietnam/vietnam-banhmi.jpg"
+                alt="Vietnamese Cuisine"
+                class="cuisine-image"
+              />
+              <div class="cuisine-overlay">
+                <h3>Vietnamese</h3>
+                <a href="vietnam.html" class="btn btn-explore">Explore</a>
+              </div>
+              <button class="favorite-btn" aria-label="Add to favorites">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="feather feather-heart"
+                >
+                  <path
+                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+            <div class="cuisine-card">
+              <img
+                src="assets/images/thailand/thailand-padthai.jpg"
+                alt="Thai Cuisine"
+                class="cuisine-image"
+              />
+              <div class="cuisine-overlay">
+                <h3>Thai</h3>
+                <a href="thailand.html" class="btn btn-explore">Explore</a>
+              </div>
+              <button class="favorite-btn" aria-label="Add to favorites">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="feather feather-heart"
+                >
+                  <path
+                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+            <div class="cuisine-card">
+              <img
+                src="assets/images/china/china-dimsum.jpg"
+                alt="Chinese Cuisine"
+                class="cuisine-image"
+              />
+              <div class="cuisine-overlay">
+                <h3>Chinese</h3>
+                <a href="china.html" class="btn btn-explore">Explore</a>
+              </div>
+              <button class="favorite-btn" aria-label="Add to favorites">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="feather feather-heart"
+                >
+                  <path
+                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="local-cuisines"
+        class="section featured-cuisines local-cuisines"
+      >
+        <div class="container">
+          <h2 class="section-title">Malaysian Culinary Heritage</h2>
+          <div class="cuisine-grid">
+            <div class="cuisine-card">
+              <img
+                src="assets/images/local/chinese/laksa.jpg"
+                alt="Chinese Cuisine"
+                class="cuisine-image"
+              />
+              <div class="cuisine-overlay">
+                <h3>Chinese Cuisine</h3>
+                <a href="chinese.html" class="btn btn-explore">Explore</a>
+              </div>
+              <button class="favorite-btn" aria-label="Add to favorites">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="feather feather-heart"
+                >
+                  <path
+                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+            <div class="cuisine-card">
+              <img
+                src="assets/images/local/malay/nasilemak.jpg"
+                alt="Malay Cuisine"
+                class="cuisine-image"
+              />
+              <div class="cuisine-overlay">
+                <h3>Malay Cuisine</h3>
+                <a href="malay.html" class="btn btn-explore">Explore</a>
+              </div>
+              <button class="favorite-btn" aria-label="Add to favorites">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="feather feather-heart"
+                >
+                  <path
+                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+            <div class="cuisine-card">
+              <img
+                src="assets/images/local/indian/roticanai.jpg"
+                alt="Indian Cuisine"
+                class="cuisine-image"
+              />
+              <div class="cuisine-overlay">
+                <h3>Indian Cuisine</h3>
+                <a href="indian.html" class="btn btn-explore">Explore</a>
+              </div>
+              <button class="favorite-btn" aria-label="Add to favorites">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="feather feather-heart"
+                >
+                  <path
+                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="about">
+        <div class="container">
+          <div class="about-content">
+            <img
+              src="assets/images/logo/websiteLogo.png"
+              alt="Food Gourmet Logo"
+              class="about-image"
+            />
+            <div class="about-text">
+              <h2 class="animate-text">About Food Gourmet</h2>
+              <p class="animate-text">
+                Food Gourmet is your passport to culinary adventures around the
+                world. We're passionate about bringing authentic flavors,
+                innovative recipes, and rich food cultures right to your screen
+                and kitchen.
+              </p>
+              <p class="animate-text">
+                Our journey began with a simple idea: to connect food lovers
+                with the diverse tastes of global and local cuisines. Today,
+                we're proud to be your trusted guide in exploring the delicious
+                world of food.
+              </p>
+              <h3 class="animate-text">What we offer:</h3>
+              <ul>
+                <li class="animate-text">
+                  Authentic recipes from across the globe
+                </li>
+                <li class="animate-text">
+                  In-depth explorations of food cultures and traditions
+                </li>
+                <li class="animate-text">
+                  Cooking tips and techniques from expert chefs
+                </li>
+                <li class="animate-text">
+                  Curated food experiences and travel recommendations
+                </li>
+              </ul>
+              <p class="animate-text">
+                Whether you're a seasoned chef or a curious foodie, Food Gourmet
+                is here to inspire your culinary journey. Join us as we taste,
+                cook, and celebrate the amazing diversity of global cuisines!
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="favorites" class="section favorites">
+        <div class="container">
+          <h2 class="section-title">Your Favorite Cuisines</h2>
+          <p class="favorites-hint">
+            Click the heart icon on a cuisine card to add it to your favorites!
+          </p>
+          <div id="favorites-list" class="favorites-grid"></div>
+        </div>
+      </section>
+
+      <section id="random-recipes" class="section">
+        <div class="container">
+          <h2 class="section-title">Discover New Recipes</h2>
+          <div id="recipes-container"></div>
+        </div>
+      </section>
+
+      <section id="blog" class="blog">
+        <div class="container">
+          <h2 class="section-title">Latest Culinary Insights</h2>
+          <div class="blog-slider">
+            <div class="blog-flex-container">
+              <article class="blog-card">
+                <img
+                  src="assets/images/vietnam/blog-posts-phobo.jpg"
+                  alt="The Art of Pho"
+                  class="blog-image"
+                />
+                <div class="blog-content">
+                  <h3>The Art of Pho: Vietnam's Iconic Soup</h3>
+                  <p>Discover the secrets behind the perfect bowl of Pho Bo</p>
+                  <a href="#" class="btn btn-tertiary">Read More</a>
+                </div>
+              </article>
+              <article class="blog-card">
+                <img
+                  src="assets/images/thailand/blog-thai-street-food.jpg"
+                  alt="Thai Street Food"
+                  class="blog-image"
+                />
+                <div class="blog-content">
+                  <h3>Exploring Thai Street Food</h3>
+                  <p>
+                    A journey through the vibrant flavors of Thailand's streets
+                  </p>
+                  <a href="#" class="btn btn-tertiary">Read More</a>
+                </div>
+              </article>
+              <article class="blog-card">
+                <img
+                  src="assets/images/china/china-dimsum.jpg"
+                  alt="The Art of Dim Sum"
+                  class="blog-image"
+                />
+                <div class="blog-content">
+                  <h3>The Art of Dim Sum</h3>
+                  <p>
+                    Uncover the history and techniques behind China's beloved
+                    dumplings
+                  </p>
+                  <a href="#" class="btn btn-tertiary">Read More</a>
+                </div>
+              </article>
+              <article class="blog-card">
+                <img
+                  src="assets/images/local/malay/nasilemak.jpg"
+                  alt="Nasi Lemak: Malaysia's National Dish"
+                  class="blog-image"
+                />
+                <div class="blog-content">
+                  <h3>Nasi Lemak: Malaysia's National Dish</h3>
+                  <p>
+                    Explore the rich flavors and cultural significance of Nasi
+                    Lemak
+                  </p>
+                  <a href="#" class="btn btn-tertiary">Read More</a>
+                </div>
+              </article>
+              <article class="blog-card">
+                <img
+                  src="assets/images/local/indian/roticanai.jpg"
+                  alt="The Flaky Goodness of Roti Canai"
+                  class="blog-image"
+                />
+                <div class="blog-content">
+                  <h3>The Flaky Goodness of Roti Canai</h3>
+                  <p>Learn the art of making the perfect Roti Canai</p>
+                  <a href="#" class="btn btn-tertiary">Read More</a>
+                </div>
+              </article>
+              <article class="blog-card">
+                <img
+                  src="assets/images/local/chinese/laksa.jpg"
+                  alt="Laksa: A Bowl of Malaysian Comfort"
+                  class="blog-image"
+                />
+                <div class="blog-content">
+                  <h3>Laksa: A Bowl of Malaysian Comfort</h3>
+                  <p>Dive into the spicy, creamy world of Malaysian Laksa</p>
+                  <a href="#" class="btn btn-tertiary">Read More</a>
+                </div>
+              </article>
+              <article class="blog-card">
+                <img
+                  src="assets/images/local/chinese/charkueyteow1.jpg"
+                  alt="Char Kuey Teow: Wok-Fried Delights"
+                  class="blog-image"
+                />
+                <div class="blog-content">
+                  <h3>Char Kuey Teow: Wok-Fried Delights</h3>
+                  <p>
+                    Discover the secrets behind this smoky, savory noodle dish
+                  </p>
+                  <a href="#" class="btn btn-tertiary">Read More</a>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <section id="share-section" class="section">
+      <div class="container">
+        <h2 class="section-title">
+          Feeling useful? Recommend to your friends now!
+        </h2>
+        <div class="share-buttons">
+          <div
+            class="fb-share-button"
+            data-href="https://your-website.com"
+            data-layout="button"
+            data-size="large"
+          >
+            <a
+              target="_blank"
+              href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fyour-website.com%2F"
+              class="fb-xfbml-parse-ignore"
+              >Share on Facebook</a
+            >
+          </div>
+          <a
+            href="https://twitter.com/share?ref_src=twsrc%5Etfw"
+            class="twitter-share-button"
+            data-size="large"
+            data-text="Check out this amazing food website!"
+            data-url="https://your-website.com"
+            data-show-count="false"
+            >Tweet</a
+          >
+        </div>
+      </div>
+    </section>
+    <footer>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h3>About Us</h3>
+            <p>
+              Food Gourmet is your passport to culinary adventures around the
+              world.
+            </p>
+          </div>
+          <div class="footer-section">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="#home">Home</a></li>
+              <li><a href="#global-cuisines">Global Cuisines</a></li>
+              <li><a href="#local-cuisines">Local Cuisines</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#blog">Blog</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h3>Contact Us</h3>
+            <p>Group79@foodgourmet.com</p>
+            <p>(+60)1-200-3700</p>
+            <p>Jalan Universiti, 31900 Kampar, Perak</p>
+          </div>
+        </div>
+        <div class="social-icons">
+          <a href="https://www.instagram.com/" class="social-icon"
+            ><img src="assets/images/logo/instagram.png" alt="Instagram"
+          /></a>
+          <a href="https://www.pinterest.com/" class="social-icon"
+            ><img src="assets/images/logo/pinterest.png" alt="Pinterest"
+          /></a>
+          <a href="https://www.facebook.com/" class="social-icon"
+            ><img src="assets/images/logo/meta.png" alt="Facebook"
+          /></a>
+          <a href="https://twitter.com/" class="social-icon"
+            ><img src="assets/images/logo/x.png" alt="Twitter"
+          /></a>
+          <a href="https://www.youtube.com/" class="social-icon"
+            ><img src="assets/images/logo/youtube1.png" alt="YouTube"
+          /></a>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2024 Food Gourmet. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <div
+      id="cookie-consent"
+      class="fixed-bottom bg-light p-3"
+      style="display: none"
+    >
+      <p>
+        This website uses cookies to ensure you get the best experience on our
+        website.
+      </p>
+      <button id="accept-cookies" class="btn btn-primary">Accept</button>
+    </div>
+
+    <button id="back-to-top" title="Go to top"></button>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="scripts.js"></script>
+  </body>
+</html>
