@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Subscription Plans</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      .hidden {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container py-5">
+      <h1 class="text-center mb-5">Choose Your Subscription Plan</h1>
+      <div style="padding: 10px">
+        <a href="index.html">Back to Home Page</a>
+      </div>
+      <div id="current-plan" class="alert alert-info text-center mb-4"></div>
+      <div class="row justify-content-center">
+        <!-- Free Plan Card -->
+        <div class="col-md-4">
+          <div class="card mb-4 shadow-sm">
+            <div class="card-header bg-primary text-white text-center">
+              <h4 class="my-0 fw-normal">Free Plan</h4>
+            </div>
+            <div class="card-body">
+              <h1 class="card-title pricing-card-title">
+                $0 <small class="text-muted">/ mo</small>
+              </h1>
+              <ul class="list-unstyled mt-3 mb-4">
+                <li>Access to basic features</li>
+                <li>Email support</li>
+                <li>Get over 100+ special receipes from famous chef</li>
+              </ul>
+              <button
+                id="basicButton"
+                type="button"
+                class="w-100 btn btn-lg btn-primary"
+                onclick="toggleSubscription('Basic Plan')"
+              >
+                Subscribe
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- Food Gourmet Pro Card -->
+        <div class="col-md-4">
+          <div class="card mb-4 shadow-sm">
+            <div class="card-header bg-success text-white text-center">
+              <h4 class="my-0 fw-normal">Food Gourmet Pro</h4>
+            </div>
+            <div class="card-body">
+              <h1 class="card-title pricing-card-title">
+                $19.99 <small class="text-muted">/ mo</small>
+              </h1>
+              <ul class="list-unstyled mt-3 mb-4">
+                <li>All basic plan features</li>
+                <li>Priority support</li>
+                <li>Unlock over 1000+ cuisine's recipes</li>
+              </ul>
+              <button
+                id="proButton"
+                type="button"
+                class="w-100 btn btn-lg btn-success"
+                onclick="toggleSubscription('Food Gourmet Pro')"
+              >
+                Subscribe
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Basic Plan Sign-up Form -->
+      <div id="basicSignupForm" class="mt-4 hidden">
+        <h3>Sign up for our newsletter</h3>
+        <form id="basicForm">
+          <div class="mb-3">
+            <label for="basicEmail" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="basicEmail" required />
+          </div>
+          <button type="submit" class="btn btn-primary">Sign Up</button>
+        </form>
+      </div>
+
+      <!-- Pro Plan Sign-up Form -->
+      <div id="proSignupForm" class="mt-4 hidden">
+        <h3>Sign up for Food Gourmet Pro</h3>
+        <form id="proForm">
+          <div class="mb-3">
+            <label for="proEmail" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="proEmail" required />
+          </div>
+          <div class="mb-3">
+            <label for="cardNumber" class="form-label">Card Number</label>
+            <input type="text" class="form-control" id="cardNumber" required />
+          </div>
+          <div class="mb-3">
+            <label for="expiryDate" class="form-label">Expiry Date</label>
+            <input
+              type="text"
+              class="form-control"
+              id="expiryDate"
+              placeholder="MM/YY"
+              required
+            />
+          </div>
+          <div class="mb-3">
+            <label for="cvv" class="form-label">CVV</label>
+            <input type="text" class="form-control" id="cvv" required />
+          </div>
+          <button type="submit" class="btn btn-success">Subscribe</button>
+        </form>
+      </div>
+
+      <!-- Announcements -->
+      <div class="alert alert-info mt-4" role="alert">
+        <h4 class="alert-heading">Limited Time Offer!</h4>
+        <p>
+          Subscribe to Food Gourmet Pro now and get an additional month free!
+        </p>
+        <hr />
+        <p class="mb-0">Offer valid until the end of this month.</p>
+      </div>
+    </div>
+
+    <footer class="bg-light mt-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 text-center py-3">
+            <p class="mb-0">&copy; 2024 Food Gourmet. All rights reserved.</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="subscription.js"></script>
+  </body>
+</html>

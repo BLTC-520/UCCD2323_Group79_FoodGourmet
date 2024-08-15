@@ -462,7 +462,10 @@
       foodTabs.forEach((tab) => {
         tab.addEventListener("click", () => {
           foodTabs.forEach((t) => t.classList.remove("active"));
-          foodDescriptions.forEach((desc) => desc.classList.remove("active"));
+          foodDescriptions.forEach((desc) => {
+            desc.classList.remove("active");
+            desc.style.opacity = "1";
+          });
 
           tab.classList.add("active");
           const target = document.querySelector(

@@ -6,6 +6,10 @@
     <title>Indian Cuisine in Malaysia - Food Gourmet</title>
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="subpage.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+Tamil&display=swap"
+      rel="stylesheet"
+    />
     <style>
       body {
         cursor: url("assets/naan.png"), auto;
@@ -50,6 +54,7 @@
       }
 
       .welcome-message {
+        font-family: "Noto Sans Tamil", sans-serif;
         font-size: 4rem;
         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
         transition: opacity 0.5s ease, transform 0.5s ease;
@@ -225,7 +230,7 @@
           <div class="container">
             <h2 class="section-title">History of Indian Cuisine in Malaysia</h2>
             <div class="history-content">
-              <p>
+              <p class="history-text right">
                 Indian cuisine in Malaysia has a rich and diverse history,
                 dating back centuries to when Indian traders first arrived on
                 the Malay Peninsula. The influx of Indian immigrants during the
@@ -233,7 +238,7 @@
                 resulting in a unique blend of traditional Indian flavors
                 adapted to local tastes and ingredients.
               </p>
-              <p>
+              <p class="history-text left">
                 Today, Malaysian Indian cuisine is an integral part of the
                 country's culinary landscape, offering a tantalizing array of
                 dishes that reflect the various regional cuisines of India, as
@@ -435,21 +440,22 @@
     </footer>
 
     <script>
-      const welcomeElement = document.getElementById("welcome-message");
+      const welcomeElement = document.querySelector(".welcome-message");
       const welcomeMessage = "வரவேற்கிறேன்";
+      const historyTexts = document.querySelectorAll(".history-text");
 
       const animateWelcomeMessage = () => {
         welcomeElement.style.opacity = "0";
         welcomeElement.style.transform = "translateY(20px)";
 
-        welcomeElement.textContent = welcomeMessage;
-        welcomeElement.style.opacity = "1";
-        welcomeElement.style.transform = "translateY(0)";
+        setTimeout(() => {
+          welcomeElement.textContent = welcomeMessage;
+          welcomeElement.style.opacity = "1";
+          welcomeElement.style.transform = "translateY(0)";
+        }, 500);
       };
 
       animateWelcomeMessage();
-
-      const historyTexts = document.querySelectorAll(".history-text");
 
       window.addEventListener("scroll", () => {
         const scrollPosition = window.scrollY + window.innerHeight;
@@ -467,16 +473,23 @@
       foodTabs.forEach((tab) => {
         tab.addEventListener("click", () => {
           foodTabs.forEach((t) => t.classList.remove("active"));
-          foodDescriptions.forEach((desc) => desc.classList.remove("active"));
+          foodDescriptions.forEach((desc) => {
+            desc.classList.remove("active");
+            desc.style.opacity = "1";
+          });
 
           tab.classList.add("active");
           const target = document.querySelector(
             tab.getAttribute("data-target")
           );
+
           target.classList.add("active");
+
+          function trackVisit(event) {
+            incrementVisitCount();
+          }
         });
       });
     </script>
-    <script src="scripts.js"></script>
   </body>
 </html>
